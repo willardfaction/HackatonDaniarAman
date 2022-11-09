@@ -1,0 +1,13 @@
+.motherProducts {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid grey;
+  border-radius: 1%;
+  margin: 1%;
+  width: 310px;
+  padding: 0.5%;
+}
