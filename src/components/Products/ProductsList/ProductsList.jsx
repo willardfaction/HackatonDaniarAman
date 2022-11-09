@@ -11,7 +11,7 @@ const ProductList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="productsList">
       <h3>Products list</h3>
       <div className="motherProducts">
         {products ? (
