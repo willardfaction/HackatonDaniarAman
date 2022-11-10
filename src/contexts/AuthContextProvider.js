@@ -10,13 +10,15 @@ const API = " http://localhost:8000/users";
 const AuthContextProvider = ({ children }) => {
   const navigate = useNavigate();
 
-  const register = async (username, password) => {
-    let formData = new FormData();
-    formData.append("username", username);
-    formData.append("password", password);
-
+  const register = async (username, password, age, email) => {
+    let userObj = {
+      username: username,
+      password: password,
+      age: age,
+      email: email,
+    };
     try {
-      const res = await axios.post(`${API}register/`, formData);
+      const res = await axios.post(`${API}`, userObj);
       console.log(res);
       navigate("/login");
     } catch (error) {
