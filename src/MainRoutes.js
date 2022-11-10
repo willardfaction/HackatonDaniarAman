@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import AdminPage from "./pages/AdminPage";
 import ProductsPage from "./pages/ProductsPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage.jsx";
+import EditProductPage from "./pages/EditProductPage.jsx";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -44,6 +45,11 @@ const MainRoutes = () => {
       link: "/details/:id",
       element: <ProductDetailsPage />,
       id: 7,
+    },
+    {
+      link: "/edit/:id",
+      element: <EditProductPage />,
+      id: 8,
     },
   ];
 
