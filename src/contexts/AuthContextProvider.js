@@ -8,6 +8,8 @@ export const useAuth = () => useContext(authContext);
 const API = " http://localhost:8000/users";
 
 const AuthContextProvider = ({ children }) => {
+  const [user, setUser] = useState("");
+
   const navigate = useNavigate();
 
   const register = async (username, password, age, email) => {
@@ -26,13 +28,19 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
-  const login = async (username, password, age, email) => {
-    let formData = new FormData();
-    formData.append("username", username);
-    formData.append("password", password);
-    formData.append("age", age);
-    formData.append("email", email);
-  };
+  async function login(user) {
+    let { data } = await axios(API);
+
+    let findUser = data.find(item => item.username == user.username);
+    // console.log(data);
+    if (!findUser) {
+      return alert("Username doesn't exist!");
+    }
+    if (findUser.password !== user.password) {
+      return alert("Incorrect password!");
+    }
+    return findUser;
+  }
 
   return (
     <authContext.Provider

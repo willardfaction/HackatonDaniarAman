@@ -1,5 +1,24 @@
 {
+<<<<<<< HEAD
+  "users": [
+    {
+      "username": "Aman",
+      "password": "ss",
+      "age": "33",
+      "email": "33",
+      "id": 1
+    },
+    {
+      "username": "test",
+      "password": "22",
+      "age": "ww",
+      "email": "ww",
+      "id": 2
+    }
+  ],
+=======
   "users": [],
+>>>>>>> a455d9f96159012b7427f4e95f579f6e44242292
   "products": [
     {
       "name": "Naruto UNS 4 ",
