@@ -1,0 +1,63 @@
+.details-block {
+  display: flex;
+  align-items: center;
+  padding-left: 18%;
+  padding-right: 18%;
+  padding-top: 2%;
+  position: relative;
+  width: 100%;
+  color: #fff;
+}
+.imageTitle {
+  display: flex;
+  flex-direction: column;
+}
+.buttonPrice {
+  display: flex;
+  flex-direction: column;
+}
+.detailsMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 350px;
+  width: 50%;
+}
+.addToCart {
+  font-size: 20px;
+  padding: 25px;
+  border: transparent;
+  font-weight: bold;
+  background-color: orange;
+  transition: 1s;
+  box-shadow: 2px 2px 5px black;
+  margin: 5px;
+  color: #fff;
+}
+.addToCart:hover {
+  background-color: darkorange;
+  transition: 1s;
+  cursor: pointer;
+}
+.product__bg:after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 496px;
+}
+.product__bg {
+  width: 100%;
+  background: #383838 url(https://steampay.com/img/background_product.jpg) 50%
+    no-repeat;
+  height: 496px;
+  background-size: cover;
+  position: absolute;
+}
+.detailsMain {
+  position: relative;
+  width: 100%;
+}
