@@ -26,12 +26,17 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
-  const login = async (username, password, age, email) => {
-    let formData = new FormData();
-    formData.append("username", username);
-    formData.append("password", password);
-    formData.append("age", age);
-    formData.append("email", email);
+  const login = async (username, password) => {
+    let userObj = {
+      username: username,
+      password: password,
+    };
+
+    try {
+      const res = await axios.post(`${API}`, userObj);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
