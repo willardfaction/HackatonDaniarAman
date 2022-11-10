@@ -6,6 +6,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import HomePage from "./pages/HomePage";
 import AdminPage from "./pages/AdminPage";
 import ProductsPage from "./pages/ProductsPage";
+import ProductDetailsPage from "./pages/ProductDetailsPage.jsx";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -38,6 +39,11 @@ const MainRoutes = () => {
       link: "/products",
       element: <ProductsPage />,
       id: 6,
+    },
+    {
+      link: "/details/:id",
+      element: <ProductDetailsPage />,
+      id: 7,
     },
   ];
 

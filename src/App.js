@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../src/components/Navbar/Navbar";
 import MainRoutes from "./MainRoutes";
 import ProductContextProvider from "./contexts/ProductContextProvider";
+import "./styles/Style.css";
 
 const App = () => {
   return (
