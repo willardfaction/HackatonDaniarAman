@@ -46,12 +46,27 @@ const ProductContextProvider = ({ children }) => {
     getProducts();
   };
 
+  const deleteProduct = async id => {
+    await axios.delete(`${JSON_API_PRODUCTS}/${id}`);
+    getProducts();
+  };
+
+  const getProductDetails = async id => {
+    const { data } = await axios(`${JSON_API_PRODUCTS}/${id}`);
+    dispatch({
+      type: "GET_PRODUCT_DETAILS",
+      payload: data,
+    });
+  };
+
   const values = {
     products: state.products,
     productDetails: state.productDetails,
 
     addProduct,
     getProducts,
+    deleteProduct,
+    getProductDetails,
   };
 
   return (
