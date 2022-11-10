@@ -6,7 +6,7 @@ import { useContext } from "react";
 const AddProduct = () => {
   const navigate = useNavigate();
 
-  const { addProduct, getProducts } = useProducts();
+  const { addProduct } = useProducts();
 
   const [product, setProduct] = useState({
     name: "",
