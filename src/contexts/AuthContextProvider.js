@@ -8,6 +8,9 @@ export const useAuth = () => useContext(authContext);
 const API = " http://localhost:8000/users";
 
 const AuthContextProvider = ({ children }) => {
+  const [user, setUser] = useState("");
+  const [letter, setLetter] = useState([]);
+
   const navigate = useNavigate();
 
   const register = async (username, password, age, email) => {
@@ -26,19 +29,64 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
-  const login = async (username, password, age, email) => {
-    let formData = new FormData();
-    formData.append("username", username);
-    formData.append("password", password);
-    formData.append("age", age);
-    formData.append("email", email);
+  async function login(user) {
+    let { data } = await axios(API);
+
+    let findUser = data.find(item => item.username == user.username);
+    // console.log(data);
+    if (!findUser) {
+      return alert("Username doesn't exist!");
+    }
+    if (findUser.password !== user.password) {
+      return alert("Incorrect password!");
+    }
+    localStorage.setItem("user", JSON.stringify(findUser));
+    let firstLetterOfUsername = findUser.username[0];
+    // letter.push(firstLetterOfUsername);
+    setLetter(letter);
+    setUser(user);
+  }
+
+  const logout = () => {
+    localStorage.removeItem("user");
+    setLetter("");
+    navigate("/");
   };
+
+  async function deleteUser(id) {
+    if (id === null) {
+      alert("error");
+    } else {
+      await axios.delete(`${API}/${id}`);
+      logout();
+      navigate("/");
+    }
+  }
+
+  // const checkAuth = async () => {
+  //   console.log("auth worked");
+  //   let user = JSON.parse(localStorage.getItem("user"));
+
+  //   localStorage.setItem(
+  //     "user",
+  //     JSON.stringify({
+  //       refresh: user.refresh,
+  //     })
+  //   );
+
+  //   let username = localStorage.getItem("user");
+  //   setUser(username);
+  // };
 
   return (
     <authContext.Provider
       value={{
+        letter: letter,
         register,
         login,
+        logout,
+        deleteUser,
+        // checkAuth,
       }}>
       {children}
     </authContext.Provider>
