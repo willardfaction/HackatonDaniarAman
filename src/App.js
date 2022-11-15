@@ -9,14 +9,14 @@ import CartContextProvider from "./contexts/CartContextProvider";
 const App = () => {
   return (
     <>
-      {/* <CartContextProvider> */}
       <ProductContextProvider>
         <AuthContextProvider>
-          <Navbar />
-          <MainRoutes />
+          <CartContextProvider>
+            <Navbar />
+            <MainRoutes />
+          </CartContextProvider>
         </AuthContextProvider>
       </ProductContextProvider>
-      {/* </CartContextProvider> */}
     </>
   );
 };

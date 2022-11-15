@@ -15,10 +15,11 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import { useEffect, useState } from "react";
 import SideBar from "../../components/SideBar/SideBar";
+import { AddShoppingCart } from "@mui/icons-material";
 
 export default function ButtonAppBar() {
   const [state, setState] = React.useState({
@@ -87,13 +88,18 @@ export default function ButtonAppBar() {
       <AppBar position="static" color="secondary">
         <Toolbar>
           <SideBar />
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Game shop
-          </Typography>
+          <Link to="/">
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              Game shop
+            </Typography>
+          </Link>
           <Typography
             variant="h6"
             component="div"
             sx={{ flexGrow: 1 }}></Typography>
+          <button onClick={() => navigate("/cartPage")}>
+            <AddShoppingCart className="Icon" />
+          </button>
         </Toolbar>
       </AppBar>
     </Box>
