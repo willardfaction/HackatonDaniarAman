@@ -11,13 +11,10 @@ const ProductCard = ({ item }) => {
 
   return (
     <div className="card">
-      <img
-        src={item.imageList}
-        alt=""
-        height="120px"
-        className="productImage"
-      />
-      <div className="infoBlock">
+      <div
+        className="mainDetails"
+        onClick={() => navigate(`/details/${item.id}`)}>
+        <img src={item.imageList} alt="" className="productImage" />
         <div>
           <h3>{item.name}</h3>
           <h5
@@ -27,6 +24,8 @@ const ProductCard = ({ item }) => {
             {item.type}
           </h5>
         </div>
+      </div>
+      <div className="infoBlock">
         <div className="productButtons">
           <button
             onClick={() => navigate(`/edit/${item.id}`)}
@@ -37,11 +36,6 @@ const ProductCard = ({ item }) => {
             onClick={() => deleteProduct(item.id)}
             className="productButton">
             Delete
-          </button>
-          <button
-            className="productButton"
-            onClick={() => navigate(`/details/${item.id}`)}>
-            Buy
           </button>
           <button
             className="productButton"
