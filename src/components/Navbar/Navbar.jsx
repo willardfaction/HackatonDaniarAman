@@ -1,107 +1,98 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
+import React, { useState } from "react";
+import SearchIcon from "@mui/icons-material/Search";
+import CloseIcon from "@mui/icons-material/Close";
+import "../../styles/Navbar.css";
+import { useNavigate } from "react-router-dom";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+
 import MenuIcon from "@mui/icons-material/Menu";
-import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContextProvider";
-import { useEffect, useState } from "react";
-import SideBar from "../../components/SideBar/SideBar";
-import { AddShoppingCart } from "@mui/icons-material";
+const Navbar = () => {
+  const [searchStyle, setSearchStyle] = useState("searchBox");
+  const [closeBtnStyle, setCloseBtnStyle] = useState("closeBtn");
+  const [searchBtnStyle, setSearchBtnStyle] = useState("searchBtn");
+  const [menuBtnStyle, setMenuBtnStyle] = useState("menuToggle");
 
-export default function ButtonAppBar() {
-  const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
-
-  const toggleDrawer = (anchor, open) => event => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
+  const [headerOpen, setHeaderOpen] = useState(false);
+  const headerStyle = () => {
+    if (headerOpen) {
+      return "open";
     }
-
-    setState({ ...state, [anchor]: open });
   };
-
-  const list = anchor => (
-    <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}>
-      <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
 
   const navigate = useNavigate();
 
-  // React.useEffect(() => {
-  //   if (localStorage.getItem("user")) {
-  //     console.log("function worked in navbar");
-  //     checkAuth();
-  //   }
-  // }, []);
-
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color="secondary">
-        <Toolbar>
-          <SideBar />
-          <Link to="/">
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Game shop
-            </Typography>
-          </Link>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1 }}></Typography>
-          <button onClick={() => navigate("/cartPage")}>
-            <AddShoppingCart className="Icon" />
-          </button>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <>
+      <header className={headerStyle()}>
+        <a href="" className="logo">
+          Logo
+        </a>
+        <img
+          src="https://steampay.com/img/logo.svg"
+          alt=""
+          width="195px"
+          className="imgLogo"
+          onClick={() => {
+            navigate("/");
+          }}
+        />
+        <div className="group">
+          <ul className="navigation">
+            <li
+              onClick={() => {
+                navigate("/products");
+              }}>
+              <a>Catalog</a>
+            </li>
+            <li>
+              <a>Services</a>
+            </li>
+            <li>
+              <a>Blog</a>
+            </li>
+            <li>
+              <a>Contact</a>
+            </li>
+          </ul>
+          <div className="search">
+            <span className="icon">
+              <SearchIcon
+                onClick={() => {
+                  setSearchStyle("searchBox active");
+                  setCloseBtnStyle("closeBtn active");
+                  setSearchBtnStyle("searchBtn active");
+                  setMenuBtnStyle("menuToggle hide");
+                }}
+                className={searchBtnStyle}
+              />
+              <CloseIcon
+                onClick={() => {
+                  setSearchStyle("searchBox");
+                  setCloseBtnStyle("closeBtn");
+                  setSearchBtnStyle("searchBtn");
+                  setMenuBtnStyle("menuToggle");
+                }}
+                className={closeBtnStyle}
+              />
+            </span>
+          </div>
+          <div className={menuBtnStyle}>
+            <MenuIcon
+              onClick={() => {
+                setHeaderOpen(!headerOpen);
+              }}
+            />
+          </div>
+          <div className="cart">
+            <ShoppingCartOutlinedIcon />
+          </div>
+        </div>
+        <div className={searchStyle}>
+          <input type="text" placeholder="Search here..." />
+        </div>
+      </header>
+    </>
   );
-}
+};
+
+export default Navbar;

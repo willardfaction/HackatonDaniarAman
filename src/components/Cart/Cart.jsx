@@ -48,9 +48,6 @@ const Cart = () => {
           <TableBody>
             {cart?.products.map(item => (
               <TableRow key={item.item.id}>
-                <TableCell align="center">
-                  <img src={item.item.picture} width="50" />
-                </TableCell>
                 <TableCell align="center">{item.item.name}</TableCell>
                 <TableCell align="center">{item.item.type}</TableCell>
                 <TableCell align="center">{item.item.price}</TableCell>

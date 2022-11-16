@@ -1,34 +1,61 @@
 .details-block {
   display: flex;
-  align-items: center;
-  padding-left: 10%;
-  padding-right: 10%;
+  flex-direction: column;
+  padding-left: 18%;
+  padding-right: 18%;
   padding-top: 2%;
   position: relative;
   width: 100%;
   color: #fff;
 }
-.imageTitle {
+.infoRight {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 110px;
+}
+.infoElement {
+  width: 50%;
+}
+.infoAbout {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #cbcbcb;
+  padding: 10%;
+  width: 100%;
+}
+.infoAbout li {
+  margin: 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.infoAbout li img {
+  margin-right: 15px;
+}
+.path {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%;
+}
+.detailsMain {
+  display: flex;
+  height: 350px;
+  width: 50%;
+  margin-top: 80px;
+  position: relative;
+  width: 100%;
 }
 .buttonPrice {
   display: flex;
   flex-direction: column;
-}
-.detailsMain {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 350px;
-  width: 50%;
 }
 .addToCart {
   font-size: 20px;
   padding: 25px;
   border: transparent;
   font-weight: bold;
-  background-color: orange;
+  background-color: lightblue;
   transition: 1s;
   box-shadow: 2px 2px 5px black;
   margin: 5px;
@@ -57,7 +84,85 @@
   background-size: cover;
   position: absolute;
 }
-.detailsMain {
+.productInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-43,
+.btn-43 *,
+.btn-43 :after,
+.btn-43 :before,
+.btn-43:after,
+.btn-43:before {
+  width: 300px;
+  font-size: 1.5em;
+  border: none;
+  box-sizing: border-box;
+}
+.btn-43 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #0094e9;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+.btn-43:disabled {
+  cursor: default;
+}
+.btn-43:-moz-focusring {
+  outline: auto;
+}
+.btn-43 svg {
+  display: block;
+  vertical-align: middle;
+}
+.btn-43 [hidden] {
+  display: none;
+}
+.btn-43 {
+  border: none;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  padding: 20px 60px;
   position: relative;
-  width: 100%;
+  text-transform: uppercase;
+}
+.btn-43 .new,
+.btn-43 .old {
+  font-weight: 900;
+}
+.btn-43 .new {
+  background: darkorange;
+  color: #fff;
+  content: "";
+  display: grid;
+  inset: 0;
+  opacity: 0;
+  place-items: center;
+  position: absolute;
+  transform: rotate(90deg) translateY(100%);
+  transform-origin: bottom left;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.btn-43:hover .new {
+  opacity: 1;
+  transform: rotate(0deg) translateY(0);
+}
+.btn-43 .old {
+  transition: opacity 0.2s;
+}
+.btn-43:hover .old {
+  opacity: 0;
 }
