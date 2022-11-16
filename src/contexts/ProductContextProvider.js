@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { createContext, useContext, useReducer } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useCart } from "../contexts/CartContextProvider";
 
 export const productContext = createContext();
 export const useProducts = () => useContext(productContext);
@@ -10,6 +11,7 @@ const INIT_STATE = {
   productDetails: null,
 };
 
+const API = " http://localhost:8000/users";
 const JSON_API_PRODUCTS = "http://localhost:8000/products";
 
 const reducer = (state = INIT_STATE, action) => {

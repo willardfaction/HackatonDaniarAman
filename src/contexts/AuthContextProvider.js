@@ -19,6 +19,7 @@ const AuthContextProvider = ({ children }) => {
       password: password,
       age: age,
       email: email,
+      isAdmin: false,
     };
     try {
       const res = await axios.post(`${API}`, userObj);
@@ -28,7 +29,6 @@ const AuthContextProvider = ({ children }) => {
       console.log(error);
     }
   };
-
   async function login(user) {
     let { data } = await axios(API);
 
@@ -40,18 +40,18 @@ const AuthContextProvider = ({ children }) => {
     if (findUser.password !== user.password) {
       return alert("Incorrect password!");
     }
-    localStorage.setItem("user", JSON.stringify(findUser));
-    let firstLetterOfUsername = findUser.username[0];
+    // localStorage.setItem("user", JSON.stringify(findUser));
+    // let firstLetterOfUsername = findUser.username[0];
     // letter.push(firstLetterOfUsername);
     setLetter(letter);
-    setUser(user);
+    setUser(findUser);
   }
 
-  const logout = () => {
+  function logout() {
     localStorage.removeItem("user");
     setLetter("");
     navigate("/");
-  };
+  }
 
   async function deleteUser(id) {
     if (id === null) {
@@ -86,6 +86,7 @@ const AuthContextProvider = ({ children }) => {
         login,
         logout,
         deleteUser,
+        user,
         // checkAuth,
       }}>
       {children}

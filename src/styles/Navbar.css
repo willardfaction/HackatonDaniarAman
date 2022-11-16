@@ -173,3 +173,12 @@ header .search {
     display: none;
   }
 }
+.cart {
+  cursor: pointer;
+}
+.productButtons {
+  display: block;
+}
+.productButtons2 {
+  display: none;
+}

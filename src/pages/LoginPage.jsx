@@ -7,7 +7,9 @@ const LoginPage = () => {
 
   const navigate = useNavigate();
 
-  const { login, letter } = useAuth();
+  const { login, letter, user } = useAuth();
+
+  let newUser = user;
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -17,11 +19,11 @@ const LoginPage = () => {
       alert("Some inputs are empty!");
       return;
     } else {
-      let user = {
+      let userIn = {
         username,
         password,
       };
-      login(user);
+      login(userIn);
     }
   }
 
@@ -32,6 +34,7 @@ const LoginPage = () => {
         placeholder="Username"
         value={username}
         onChange={e => setUsername(e.target.value)}
+        style={{ marginTop: "80px" }}
       />
 
       <input
