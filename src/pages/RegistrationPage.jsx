@@ -18,6 +18,7 @@ const RegistrationPage = () => {
         placeholder="Enter your nickname"
         value={username}
         onChange={e => setUsername(e.target.value)}
+        style={{ marginTop: "80px" }}
       />
       <input
         type="text"

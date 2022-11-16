@@ -5,6 +5,8 @@ import {
   calcSubPrice,
   calcTotalPrice,
 } from "../helpers/functions";
+import { useAuth } from "../contexts/AuthContextProvider";
+import { useNavigate } from "react-router-dom";
 
 export const cartContextProvider = React.createContext();
 export const useCart = () => useContext(cartContextProvider);
@@ -27,6 +29,8 @@ function reducer(state = INIT_STATE, action) {
 
 const CartContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
+  const navigate = useNavigate();
+  const { user } = useAuth();
 
   const getCart = () => {
     let cart = JSON.parse(localStorage.getItem("cart"));
@@ -56,29 +60,37 @@ const CartContextProvider = ({ children }) => {
 
   function addProductToCart(product) {
     let cart = JSON.parse(localStorage.getItem("cart"));
-    if (!cart) {
-      cart = {
-        products: [],
-        totalPrice: 0,
+    if (user) {
+      if (!cart) {
+        cart = {
+          products: [],
+          totalPrice: 0,
+        };
+      }
+
+      let newProduct = {
+        item: product,
+        count: 1,
+        subPrice: +product.price,
       };
-    }
-    let newProduct = {
-      item: product,
-      count: 1,
-      subPrice: +product.price,
-    };
-    let productToFind = cart.products.filter(
-      elem => elem.item.id === product.id
-    );
-    if (productToFind.length === 0) {
-      cart.products.push(newProduct);
+      let productToFind = cart.products.filter(
+        elem => elem.item.id === product.id
+      );
+      if (productToFind.length === 0) {
+        cart.products.push(newProduct);
+      } else {
+        cart.products = cart.products.filter(
+          elem => elem.item.id !== product.id
+        );
+      }
+      cart.totalPrice = calcTotalPrice(cart.products);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      getCart();
+      alert("Added to cart!");
     } else {
-      cart.products = cart.products.filter(elem => elem.item.id !== product.id);
+      alert("You must login first!");
+      navigate("/login");
     }
-    cart.totalPrice = calcTotalPrice(cart.products);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    getCart();
-    alert("Added to cart!");
   }
 
   const deleteFromCart = id => {

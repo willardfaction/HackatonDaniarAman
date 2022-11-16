@@ -1,17 +1,19 @@
 {
   "users": [
     {
-      "username": "Aman",
+      "username": "Aa",
       "password": "ss",
-      "age": "33",
-      "email": "33",
+      "age": "ss",
+      "email": "ss",
+      "isAdmin": true,
       "id": 1
     },
     {
-      "username": "test",
-      "password": "22",
-      "age": "ww",
-      "email": "ww",
+      "username": "ss",
+      "password": "ss",
+      "age": "ss",
+      "email": "ss",
+      "isAdmin": false,
       "id": 2
     }
   ],

@@ -4,6 +4,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import "../../styles/Navbar.css";
 import { useNavigate } from "react-router-dom";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { useAuth } from "../../contexts/AuthContextProvider";
 
 import MenuIcon from "@mui/icons-material/Menu";
 const Navbar = () => {
@@ -11,6 +12,14 @@ const Navbar = () => {
   const [closeBtnStyle, setCloseBtnStyle] = useState("closeBtn");
   const [searchBtnStyle, setSearchBtnStyle] = useState("searchBtn");
   const [menuBtnStyle, setMenuBtnStyle] = useState("menuToggle");
+
+  const { user } = useAuth();
+
+  function logout() {
+    localStorage.removeItem("user");
+    navigate("/");
+    window.location.reload(false);
+  }
 
   const [headerOpen, setHeaderOpen] = useState(false);
   const headerStyle = () => {
@@ -53,6 +62,33 @@ const Navbar = () => {
             <li>
               <a>Contact</a>
             </li>
+
+            {user ? (
+              <li
+                className="login"
+                onClick={() => {
+                  logout();
+                }}>
+                <a>Logout</a>
+              </li>
+            ) : (
+              <>
+                <li
+                  className="register"
+                  onClick={() => {
+                    navigate("/register");
+                  }}>
+                  <a>Register</a>
+                </li>
+                <li
+                  className="login"
+                  onClick={() => {
+                    navigate("/login");
+                  }}>
+                  <a>Sign in</a>
+                </li>
+              </>
+            )}
           </ul>
           <div className="search">
             <span className="icon">
@@ -84,7 +120,7 @@ const Navbar = () => {
             />
           </div>
           <div className="cart">
-            <ShoppingCartOutlinedIcon />
+            <ShoppingCartOutlinedIcon onClick={() => navigate("/cartpage")} />
           </div>
         </div>
         <div className={searchStyle}>
