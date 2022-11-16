@@ -26,7 +26,10 @@ const LoginPage = () => {
   }
 
   return (
-    <>
+    <div
+      style={{
+        marginTop: "80px",
+      }}>
       <input
         type="text"
         placeholder="Username"
@@ -48,7 +51,7 @@ const LoginPage = () => {
         }}>
         Login
       </button>
-    </>
+    </div>
   );
 };
 

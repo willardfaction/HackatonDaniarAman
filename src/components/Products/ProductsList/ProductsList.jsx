@@ -27,8 +27,10 @@ const ProductList = ({ page, setPage, changeSideBarStatus }) => {
 
   return (
     <div className="productsList">
-      <h3>Products list</h3>
-      <h5>Всего {products.length} товаров</h5>
+      <div className="listInfo">
+        <h3>Products list</h3>
+        <h5>Всего {products.length} товаров</h5>
+      </div>
       <div className="motherProducts">
         {products ? (
           currentData().map(item => <ProductCard key={item.id} item={item} />)

@@ -39,7 +39,10 @@ const EditProduct = () => {
   return (
     <>
       {product ? (
-        <>
+        <div
+          style={{
+            marginTop: "80px",
+          }}>
           <h2>Add product</h2>
 
           <input
@@ -91,7 +94,7 @@ const EditProduct = () => {
             }}>
             Save
           </button>
-        </>
+        </div>
       ) : (
         <h3>Loading</h3>
       )}
