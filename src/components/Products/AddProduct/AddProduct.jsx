@@ -12,7 +12,8 @@ const AddProduct = () => {
     name: "",
     description: "",
     price: "",
-    image: "",
+    imageList: "",
+    imageDetails: "",
     type: "",
   });
 
@@ -54,8 +55,14 @@ const AddProduct = () => {
       />
       <input
         type="text"
-        placeholder="Product image"
-        name="image"
+        placeholder="Product image in list"
+        name="imageList"
+        onChange={handleInp}
+      />
+      <input
+        type="text"
+        placeholder="Product image in details"
+        name="imageDetails"
         onChange={handleInp}
       />
       <input
