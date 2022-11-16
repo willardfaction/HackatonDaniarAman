@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../contexts/AuthContextProvider";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   <h1>Login Page</h1>;
 
-  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  const { login, letter } = useAuth();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -20,12 +23,6 @@ const LoginPage = () => {
       };
       login(user);
     }
-
-    let user = {
-      username,
-      password,
-    };
-    login(user);
   }
 
   return (
@@ -44,7 +41,13 @@ const LoginPage = () => {
         onChange={e => setPassword(e.target.value)}
       />
 
-      <button onClick={() => getUser()}>Login</button>
+      <button
+        onClick={() => {
+          getUser();
+          navigate("/products");
+        }}>
+        Login
+      </button>
     </>
   );
 };

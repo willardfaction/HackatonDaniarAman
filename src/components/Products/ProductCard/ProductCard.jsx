@@ -2,9 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../../contexts/ProductContextProvider";
 import "../../../styles/CardStyle.css";
+import { useCart } from "../../../contexts/CartContextProvider";
 const ProductCard = ({ item }) => {
   const navigate = useNavigate();
   const { deleteProduct } = useProducts();
+
+  const { addProductToCart } = useCart();
 
   return (
     <div className="card">
@@ -39,6 +42,11 @@ const ProductCard = ({ item }) => {
             className="productButton"
             onClick={() => navigate(`/details/${item.id}`)}>
             Buy
+          </button>
+          <button
+            className="productButton"
+            onClick={() => addProductToCart(item)}>
+            Add To Cart
           </button>
         </div>
         <h3>{item.price}$</h3>
