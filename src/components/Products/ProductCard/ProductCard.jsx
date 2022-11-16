@@ -8,7 +8,12 @@ const ProductCard = ({ item }) => {
 
   return (
     <div className="card">
-      <img src={item.image} alt="" height="120px" className="productImage" />
+      <img
+        src={item.imageList}
+        alt=""
+        height="120px"
+        className="productImage"
+      />
       <div className="infoBlock">
         <div>
           <h3>{item.name}</h3>

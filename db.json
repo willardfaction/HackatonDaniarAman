@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "users": [
     {
       "username": "Aman",
@@ -16,33 +15,15 @@
       "id": 2
     }
   ],
-=======
-  "users": [],
->>>>>>> a455d9f96159012b7427f4e95f579f6e44242292
   "products": [
     {
       "name": "Naruto UNS 4 ",
       "description": "About This Game ... The latest opus in the acclaimed STORM series is taking you on a colourful and breathtaking ride. Take advantage of the totally revamped ...",
       "price": 70,
-      "image": "https://cdn.akamai.steamstatic.com/steam/apps/349040/capsule_616x353.jpg?t=1611701005",
+      "imageList": "https://cdn.akamai.steamstatic.com/steam/apps/349040/capsule_616x353.jpg?t=1611701005",
+      "imageDetails": "https://i.playground.ru/e/AH5FBDzblsznP3rE_tAscg.jpeg?600-600",
       "type": "Fighting",
       "id": 2
-    },
-    {
-      "name": "DEATHLOOP",
-      "description": "DEATHLOOP is a next-gen first person shooter from Arkane Lyon, the award-winning studio behind Dishonored. In DEATHLOOP, two rival assassins are ...",
-      "price": 60,
-      "image": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_DEATHLOOP_ArkaneStudios_S1_2560x1440-bf6d342edbd2411ccf24e326852fca93",
-      "type": "Shooter",
-      "id": 4
-    },
-    {
-      "name": "Dark Souls 3 ",
-      "description": "“Dark Souls III successfully replicates the winning formula of the Souls series, a wondrous combination of majestic boss battles, ...",
-      "price": 60,
-      "image": "https://cdn.akamai.steamstatic.com/steam/apps/374320/header.jpg?t=1661484182",
-      "type": "Adventure",
-      "id": 5
     }
   ]
 }

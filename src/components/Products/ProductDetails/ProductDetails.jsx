@@ -24,7 +24,12 @@ const ProductDetails = () => {
                 }}>
                 {productDetails.name}
               </h2>
-              <img src={productDetails.image} alt="" width="375px" />
+              <img
+                src={productDetails.imageDetails}
+                alt=""
+                width="375px"
+                className="imageDetails"
+              />
             </div>
             <div className="detailsMain">
               <div className="buttonPrice">
