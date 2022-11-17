@@ -31,7 +31,6 @@ const Cart = () => {
 
   return (
     <>
-      <h1>CART PAGE</h1>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>

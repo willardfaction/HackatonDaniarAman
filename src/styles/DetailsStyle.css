@@ -1,27 +1,104 @@
 .details-block {
   display: flex;
   flex-direction: column;
-  padding-left: 18%;
-  padding-right: 18%;
+  padding-left: 20%;
+  padding-right: 20%;
   padding-top: 2%;
   position: relative;
   width: 100%;
   color: #fff;
 }
+@media (max-width: 1776px) {
+  .details-block {
+    padding-left: 18%;
+    padding-right: 18%;
+  }
+}
+@media (max-width: 1500px) {
+  .details-block {
+    padding-left: 13%;
+    padding-right: 13%;
+  }
+}
+@media (max-width: 1200px) {
+  .details-block {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+@media (max-width: 1024px) {
+  .details-block {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
+@media (max-width: 800px) {
+  .productInfo {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.productInfoLeft {
+  margin-top: 20px;
+  background-color: #3b3b3b;
+  padding: 40px 20px;
+}
+.infoKey {
+  text-align: right;
+  margin-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.infoIn {
+  text-align: left;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+.productInfoLeftElment {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+}
+.productDesc {
+  color: #000;
+  background-color: white;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 140px;
+}
+.imageTitle {
+  transition: 0.5s;
+}
+.imageTitle:hover {
+  transform: scale(1.1);
+}
 .infoRight {
   display: flex;
+  flex-direction: column;
+  width: 700px;
+  padding-left: 50px;
   justify-content: space-between;
-  width: 100%;
-  padding-left: 110px;
 }
 .infoElement {
-  width: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 .infoAbout {
   background-color: rgba(0, 0, 0, 0.5);
   color: #cbcbcb;
-  padding: 10%;
+  padding: 19px;
   width: 100%;
+  margin-right: 40px;
+}
+.pathBtn {
+  transition: 0.5s;
+}
+.pathBtn:hover {
+  color: darkorange;
+  transition: 0.5s;
 }
 .infoAbout li {
   margin: 10px;
@@ -36,7 +113,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 20%;
+  width: 25%;
 }
 .detailsMain {
   display: flex;

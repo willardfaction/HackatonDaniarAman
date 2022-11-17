@@ -5,7 +5,7 @@ import "../../../styles/CardStyle.css";
 import { Pagination } from "@mui/material";
 
 const ProductList = ({ page, setPage, changeSideBarStatus }) => {
-  const { products, getProducts } = useProducts();
+  const { products, getProducts, searchValue } = useProducts();
 
   useEffect(() => {
     getProducts();
@@ -22,13 +22,18 @@ const ProductList = ({ page, setPage, changeSideBarStatus }) => {
   function currentData() {
     const begin = (page - 1) * itemsOnPage;
     const end = begin + itemsOnPage;
-    return products.slice(begin, end);
+    return filteredProducts.slice(begin, end);
   }
+  const filteredProducts = products.filter(product => {
+    return product.name.toLowerCase().includes(searchValue.toLowerCase());
+  });
 
   return (
     <div className="productsList">
-      <h3>Products list</h3>
-      <h5>Всего {products.length} товаров</h5>
+      <div className="listInfo">
+        <h3>Products list</h3>
+        <h5>Всего {products.length} товаров</h5>
+      </div>
       <div className="motherProducts">
         {products ? (
           currentData().map(item => <ProductCard key={item.id} item={item} />)

@@ -7,11 +7,13 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useAuth } from "../../contexts/AuthContextProvider";
 
 import MenuIcon from "@mui/icons-material/Menu";
+import { useProducts } from "../../contexts/ProductContextProvider";
 const Navbar = () => {
   const [searchStyle, setSearchStyle] = useState("searchBox");
   const [closeBtnStyle, setCloseBtnStyle] = useState("closeBtn");
   const [searchBtnStyle, setSearchBtnStyle] = useState("searchBtn");
   const [menuBtnStyle, setMenuBtnStyle] = useState("menuToggle");
+  const { setSearchValue, searchValue } = useProducts();
 
   const { user } = useAuth();
 
@@ -107,6 +109,7 @@ const Navbar = () => {
                   setCloseBtnStyle("closeBtn");
                   setSearchBtnStyle("searchBtn");
                   setMenuBtnStyle("menuToggle");
+                  setSearchValue("");
                 }}
                 className={closeBtnStyle}
               />
@@ -124,7 +127,14 @@ const Navbar = () => {
           </div>
         </div>
         <div className={searchStyle}>
-          <input type="text" placeholder="Search here..." />
+          <input
+            type="text"
+            placeholder="Search here..."
+            onChange={e => {
+              setSearchValue(e.target.value);
+            }}
+            value={searchValue}
+          />
         </div>
       </header>
     </>

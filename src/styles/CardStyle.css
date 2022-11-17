@@ -2,6 +2,14 @@
   padding-left: 8%;
   padding-right: 8%;
   margin: 2%;
+  margin-top: 100px;
+}
+.listInfo {
+  margin-left: 15px;
+}
+.productType {
+  display: flex;
+  align-items: center;
 }
 .motherProducts {
   display: flex;

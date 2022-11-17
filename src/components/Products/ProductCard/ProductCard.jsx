@@ -25,13 +25,28 @@ const ProductCard = ({ item }) => {
         onClick={() => navigate(`/details/${item.id}`)}>
         <img src={item.imageList} alt="" className="productImage" />
         <div>
-          <h3>{item.name}</h3>
-          <h5
+          <h3
             style={{
-              color: "grey",
+              fontWeight: "lighter",
             }}>
-            {item.type}
-          </h5>
+            {item.name}
+          </h3>
+          <div className="productType">
+            <img
+              src="https://steampay.com/img/platforms/1.png"
+              alt=""
+              style={{
+                marginRight: "10px",
+              }}
+              width="20px"
+            />
+            <h5
+              style={{
+                color: "grey",
+              }}>
+              {item.type}
+            </h5>
+          </div>
         </div>
       </div>
       <div className="infoBlock">
