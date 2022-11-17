@@ -4,6 +4,10 @@ import { useProducts } from "../../../contexts/ProductContextProvider";
 import "../../../styles/CardStyle.css";
 import { useCart } from "../../../contexts/CartContextProvider";
 import { useAuth } from "../../../contexts/AuthContextProvider";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import EditIcon from "@mui/icons-material/Edit";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const ProductCard = ({ item }) => {
   const navigate = useNavigate();
   const { deleteProduct } = useProducts();
@@ -18,8 +22,13 @@ const ProductCard = ({ item }) => {
 
   useEffect(() => getAdmin(), []);
 
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
-    <div className="card">
+    <div className="card" data-aos="fade-right">
       <div
         className="mainDetails"
         onClick={() => navigate(`/details/${item.id}`)}>
@@ -52,21 +61,14 @@ const ProductCard = ({ item }) => {
       <div className="infoBlock">
         {user.isAdmin ? (
           <div className="productButtons">
-            <button
+            <EditIcon
               onClick={() => navigate(`/edit/${item.id}`)}
-              className="productButton">
-              Edit
-            </button>
-            <button
-              onClick={() => deleteProduct(item.id)}
-              className="productButton">
-              Delete
-            </button>
-            <button
               className="productButton"
-              onClick={() => addProductToCart(item)}>
-              Add To Cart
-            </button>
+            />
+            <DeleteForeverIcon
+              onClick={() => deleteProduct(item.id)}
+              className="productButton"
+            />
           </div>
         ) : (
           <></>

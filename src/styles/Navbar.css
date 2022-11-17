@@ -151,6 +151,7 @@ header .search {
   }
   .searchBtn {
     left: 0;
+    transition: 0.5s;
   }
   header.open .navigation {
     top: 80px;

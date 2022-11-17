@@ -22,7 +22,6 @@ const LoginPage = () => {
         password,
       };
       login(userIn);
-      navigate("/products");
     }
   }
 

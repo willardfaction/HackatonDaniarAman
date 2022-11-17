@@ -61,14 +61,14 @@ const EditProduct = () => {
           />
           <input
             type="text"
-            value={product.image}
+            value={product.imageList}
             placeholder="Product image in list(url) "
             name="imageList"
             onChange={handleInp}
           />
           <input
             type="text"
-            value={product.image}
+            value={product.imageDetails}
             placeholder="Product image in details (url) "
             name="imageDetails"
             onChange={handleInp}

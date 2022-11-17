@@ -47,8 +47,8 @@ const AuthContextProvider = ({ children }) => {
     // localStorage.setItem("user", JSON.stringify(findUser));
     // let firstLetterOfUsername = findUser.username[0];
     // letter.push(firstLetterOfUsername);
-    setLetter(letter);
     setUser(findUser);
+    navigate("/products");
   }
 
   function logout() {

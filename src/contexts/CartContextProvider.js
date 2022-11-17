@@ -96,7 +96,7 @@ const CartContextProvider = ({ children }) => {
   };
 
   const changeCountOfProducts = (count, id) => {
-    if (count < 0) {
+    if (count < 1) {
       alert("Error, it cannot be less than 0");
       return;
     }

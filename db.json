@@ -67,6 +67,51 @@
       "imageDetails": "https://steampay.com/product/batora-lost-haven.jpg?1666269521",
       "type": "RPG",
       "id": 4
+    },
+    {
+      "name": "Elden ring",
+      "description": "Elden Ring[a] is a 2022 action role-playing game developed by FromSoftware and published by Bandai Namco Entertainment. It was directed by Hidetaka Miyazaki with worldbuilding provided by fantasy writer George R. R. Martin. The game was released for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on February 25.  In Elden Ring, players control a customizable player character on a journey to repair the Elden Ring and become the new Elden Lord. The game is presented through a third-person perspective, with players freely roaming its interactive open world. Gameplay elements include combat using several types of weapons and magic spells, horseback riding, and crafting.  FromSoftware wanted to create an open-world game with gameplay similar to their Dark Souls series, intending Elden Ring to act as an evolution of Dark Souls. Miyazaki admired Martin's work and hoped his contributions would produce a more accessible narrative than FromSoftware's previous games. Elden Ring received critical acclaim for its open-world, gameplay systems, and setting, with criticism going towards its technical performance upon release. The game had sold more than 17.5 million copies by October 2022.",
+      "price": 70,
+      "imageList": "https://i.ytimg.com/vi/OT8if6DXOFQ/maxresdefault.jpg",
+      "imageDetails": "https://m.media-amazon.com/images/I/81wIfXJhlCL._AC_SX425_.jpg",
+      "type": "RPG",
+      "id": 5
+    },
+    {
+      "name": "No Man's Sky",
+      "description": "No Man's Sky is a procedural science fiction exploration and survival game developed by English developer Hello Games out of Guildford, UK. Hello Games is best known for their Joe Danger series, and brought their unique development style to No Man's Sky. The game features planetary exploration, deep oceans, space-based battles, predators and prey, and much more across various procedurally-generated worlds. Each world has its own ecosystems, rewards, and dangers, leading the player through the four core pillars of the game: Explore, Fight, Trade, and Survive. The game launched on 9 August 2016 in NA on PlayStation 4, 10 August in EU on PlayStation 4, and worldwide on 12 August on PC. The launch for Xbox took place on 24 July, 2018.",
+      "price": 20,
+      "imageList": "https://steampay.com/image/no-mans-sky.jpg?1505771258",
+      "imageDetails": "https://steampay.com/product/no-mans-sky.jpg?1557528799",
+      "type": "RPG",
+      "id": 6
+    },
+    {
+      "name": "MORTAL KOMBAT 11",
+      "description": "Mortal Kombat 11 is a 2019 fighting game developed by NetherRealm Studios and published by Warner Bros. Interactive Entertainment. Running on a heavily modified version of Unreal Engine 3,[7] It is the eleventh main installment in the Mortal Kombat series and a sequel to 2015's Mortal Kombat X. Announced at The Game Awards 2018, the game was released in North America and Europe on April 23, 2019, for Microsoft Windows, Nintendo Switch, PlayStation 4, and Xbox One—with the exception of Europe's Switch version which was released on May 10, 2019.[8] The game was released on Stadia on November 19, 2019.[9]",
+      "price": 15,
+      "imageList": "https://steampay.com/image/mortal-kombat-11.jpg?1547808758",
+      "imageDetails": "https://steampay.com/product/mortal-kombat-11.jpg?1548453314",
+      "type": "Fighting",
+      "id": 7
+    },
+    {
+      "name": "MARVEL’S SPIDER-MAN REMASTERED",
+      "description": "Marvel's Spider-Man[a] is a video game based on the Marvel Comics superhero Spider-Man, developed by Insomniac Games and published by Sony Interactive Entertainment. It was released worldwide on September 7, 2018 for the PlayStation 4, as the first licensed game developed by Insomniac. A PlayStation 5 remaster was announced to be included alongside its downloadable contents in the Ultimate Edition of Marvel's Spider-Man: Miles Morales under the name of Marvel's Spider-Man Remastered,[2]which was made available as a standalone title by the end of 2020. [3] Remastered was later released for Microsoft Windows via Steam and the Epic Games Store on August 12, 2022.[4] A sequel titled Marvel's Spider-Man 2 is set to release in 2023.",
+      "price": 65,
+      "imageList": "https://steampay.com/image/marvels-spider-man-remastered.jpg?1659615081",
+      "imageDetails": "https://steampay.com/product/marvels-spider-man-remastered.jpg?1659615081",
+      "type": "Adventure",
+      "id": 8
+    },
+    {
+      "name": "Dota 2",
+      "description": "asdasdasd",
+      "price": 9999,
+      "imageList": "https://steampay.com/product/marvels-spider-man-miles-morales.jpg?1666886551",
+      "imageDetails": "https://steampay.com/product/marvels-spider-man-miles-morales.jpg?1666886551",
+      "type": "Shooter",
+      "id": 9
     }
   ]
 }
