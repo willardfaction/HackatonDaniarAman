@@ -38,6 +38,7 @@ const AddProduct = () => {
       style={{
         display: "flex",
         flexDirection: "column",
+        marginTop: "80px",
       }}>
       <h2>Add product</h2>
 

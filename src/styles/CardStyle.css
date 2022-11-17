@@ -17,19 +17,18 @@
   flex-wrap: wrap;
 }
 .productImage {
-  margin: 1px;
   margin-right: 20px;
-  height: 120px;
-  width: 250px;
+  height: 100px;
+  width: 200px;
 }
 .card {
+  padding: 50px;
   display: flex;
   background-color: white;
   margin: 1%;
   width: 100%;
-  padding: 2px;
   align-items: center;
-  height: 125px;
+  height: 175px;
   transition: 0.5s;
   justify-content: space-between;
 }

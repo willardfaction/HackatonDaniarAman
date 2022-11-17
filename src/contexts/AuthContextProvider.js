@@ -14,6 +14,10 @@ const AuthContextProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const register = async (username, password, age, email) => {
+    if (!username || !password || !age || !email) {
+      alert("Some inputs are empty!");
+      return;
+    }
     let userObj = {
       username: username,
       password: password,

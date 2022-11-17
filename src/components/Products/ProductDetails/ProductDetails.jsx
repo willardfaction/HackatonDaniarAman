@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useCart } from "../../../contexts/CartContextProvider";
 import { useProducts } from "../../../contexts/ProductContextProvider";
 import "../../../styles/DetailsStyle.css";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const { getProductDetails, productDetails } = useProducts();
+  const { addProductToCart } = useCart();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -164,7 +166,9 @@ const ProductDetails = () => {
                         .00 USD
                       </sup>
                     </h3>
-                    <button class="btn-43">
+                    <button
+                      class="btn-43"
+                      onClick={() => addProductToCart(productDetails)}>
                       <span class="old">Buy</span>
                       <span class="new">Add to cart</span>
                     </button>

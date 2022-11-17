@@ -69,13 +69,7 @@ const ProductCard = ({ item }) => {
             </button>
           </div>
         ) : (
-          <div>
-            <button
-              className="productButton"
-              onClick={() => addProductToCart(item)}>
-              Add To Cart
-            </button>
-          </div>
+          <></>
         )}
         <h3>{item.price}$</h3>
       </div>

@@ -1,0 +1,229 @@
+.loginBlock {
+  margin: 200px;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+.regInp {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.line {
+  border: none;
+  border-top: 1px solid #e1e2e3;
+
+  width: 50%;
+}
+.innerBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  width: 100%;
+  padding: 9%;
+  height: 600px;
+}
+.loginInp {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.inputsBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 10px;
+}
+.loginInputs {
+  border-radius: 0;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: #f9f8f8;
+  border: 1px solid #e1e2e3;
+  height: 40px;
+  color: #141414;
+  position: relative;
+  transition: 0.5s;
+  width: 300px;
+  padding: 10px;
+  margin: 5px;
+}
+.loginInputs:hover {
+  border: 1px solid darkorange;
+  transition: 0.5s;
+}
+
+.accountTitle {
+  text-align: start;
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.btn-43,
+.btn-43 *,
+.btn-43 :after,
+.btn-43 :before,
+.btn-43:after,
+.btn-43:before {
+  width: 300px;
+  font-size: 1.5em;
+  border: none;
+  box-sizing: border-box;
+}
+.btn-43 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #0094e9;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+.btn-43:disabled {
+  cursor: default;
+}
+.btn-43:-moz-focusring {
+  outline: auto;
+}
+.btn-43 svg {
+  display: block;
+  vertical-align: middle;
+}
+.btn-43 [hidden] {
+  display: none;
+}
+.btn-43 {
+  border: none;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  padding: 20px 60px;
+  position: relative;
+  text-transform: uppercase;
+}
+.btn-43 .new,
+.btn-43 .old {
+  font-weight: 900;
+}
+.btn-43 .new {
+  background: #141414;
+  color: #fff;
+  content: "";
+  display: grid;
+  inset: 0;
+  opacity: 0;
+  place-items: center;
+  position: absolute;
+  transform: rotate(90deg) translateY(100%);
+  transform-origin: bottom left;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.btn-43:hover .new {
+  opacity: 1;
+  transform: rotate(0deg) translateY(0);
+}
+.btn-43 .old {
+  transition: opacity 0.2s;
+}
+.btn-43:hover .old {
+  opacity: 0;
+}
+.btn-43re,
+.btn-43re *,
+.btn-43re :after,
+.btn-43re :before,
+.btn-43re:after,
+.btn-43re:before {
+  width: 300px;
+  font-size: 1.5em;
+  border: none;
+  box-sizing: border-box;
+}
+.btn-43re {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #ff793a;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+.btn-43re:disabled {
+  cursor: default;
+}
+.btn-43re:-moz-focusring {
+  outline: auto;
+}
+.btn-43re svg {
+  display: block;
+  vertical-align: middle;
+}
+.btn-43re [hidden] {
+  display: none;
+}
+.btn-43re {
+  border: none;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  padding: 20px 60px;
+  position: relative;
+  text-transform: uppercase;
+}
+.btn-43re .newre,
+.btn-43re .oldre {
+  font-weight: 900;
+}
+.btn-43re .newre {
+  background: #141414;
+  color: #fff;
+  content: "";
+  display: grid;
+  inset: 0;
+  opacity: 0;
+  place-items: center;
+  position: absolute;
+  transform: rotate(90deg) translateY(100%);
+  transform-origin: bottom left;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.btn-43re:hover .newre {
+  opacity: 1;
+  transform: rotate(0deg) translateY(0);
+}
+.btn-43re .oldre {
+  transition: opacity 0.2s;
+}
+.btn-43re:hover .oldre {
+  opacity: 0;
+}

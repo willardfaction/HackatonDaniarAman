@@ -32,13 +32,13 @@ const ProductList = ({ page, setPage, changeSideBarStatus }) => {
     <div className="productsList">
       <div className="listInfo">
         <h3>Products list</h3>
-        <h5>Всего {products.length} товаров</h5>
+        <h5>Found {products.length} products</h5>
       </div>
       <div className="motherProducts">
         {products ? (
           currentData().map(item => <ProductCard key={item.id} item={item} />)
         ) : (
-          <h3>Loading...</h3>
+          <img src="https://i.yapx.ru/GuFC4.gif" alt="" />
         )}
       </div>
       <Pagination
