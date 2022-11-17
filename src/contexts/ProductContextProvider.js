@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { createContext, useContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export const productContext = createContext();
@@ -25,6 +25,8 @@ const reducer = (state = INIT_STATE, action) => {
 
 const ProductContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
+
+  const [searchValue, setSearchValue] = useState("");
 
   const navigate = useNavigate();
 
@@ -73,6 +75,8 @@ const ProductContextProvider = ({ children }) => {
     deleteProduct,
     getProductDetails,
     saveEditedProduct,
+    setSearchValue,
+    searchValue,
   };
 
   return (

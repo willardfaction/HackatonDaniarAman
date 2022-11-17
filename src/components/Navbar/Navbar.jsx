@@ -6,11 +6,13 @@ import { useNavigate } from "react-router-dom";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 import MenuIcon from "@mui/icons-material/Menu";
+import { useProducts } from "../../contexts/ProductContextProvider";
 const Navbar = () => {
   const [searchStyle, setSearchStyle] = useState("searchBox");
   const [closeBtnStyle, setCloseBtnStyle] = useState("closeBtn");
   const [searchBtnStyle, setSearchBtnStyle] = useState("searchBtn");
   const [menuBtnStyle, setMenuBtnStyle] = useState("menuToggle");
+  const { setSearchValue, searchValue } = useProducts();
 
   const [headerOpen, setHeaderOpen] = useState(false);
   const headerStyle = () => {
@@ -71,6 +73,7 @@ const Navbar = () => {
                   setCloseBtnStyle("closeBtn");
                   setSearchBtnStyle("searchBtn");
                   setMenuBtnStyle("menuToggle");
+                  setSearchValue("");
                 }}
                 className={closeBtnStyle}
               />
@@ -88,7 +91,14 @@ const Navbar = () => {
           </div>
         </div>
         <div className={searchStyle}>
-          <input type="text" placeholder="Search here..." />
+          <input
+            type="text"
+            placeholder="Search here..."
+            onChange={e => {
+              setSearchValue(e.target.value);
+            }}
+            value={searchValue}
+          />
         </div>
       </header>
     </>
